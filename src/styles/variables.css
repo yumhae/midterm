@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #7c3aed;
+  --secondary-color: #ec4899;
+  --accent-color: #f59e0b;
+  --bg-color: #fff7fb;
+  --card-bg: #ffffff;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+  --nav-bg: rgba(255,255,255,0.8);
+  --max-width: 1100px;
+  --card-radius: 14px;
+  --transition-bounce: cubic-bezier(0.36, 0, 0.66, -0.56);
+  --transition-smooth: cubic-bezier(0.17, 0.55, 0.55, 1);
+}

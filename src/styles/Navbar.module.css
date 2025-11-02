@@ -1,0 +1,112 @@
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(2,6,23,0.06);
+  z-index: 50;
+}
+
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navMenu {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navMenu a {
+  display: inline-block;
+  padding: 0.35rem 0.2rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.navMenu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.28s;
+}
+
+.navMenu a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    z-index: 60;
+  }
+
+  .navMenu {
+    position: fixed;
+    top: 64px;
+    right: -110%;
+    height: calc(100% - 64px);
+    width: 100%;
+    background: var(--nav-bg);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.25rem;
+    transition: right 0.25s;
+    overflow: auto;
+    z-index: 55;
+  }
+
+  .navMenu.active {
+    right: 0;
+  }
+
+  /* Make links full-width and larger touch targets on mobile */
+  .navMenu a {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 0;
+    text-align: center;
+    font-size: 1rem;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.06);
+  }
+}

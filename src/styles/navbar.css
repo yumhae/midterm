@@ -1,0 +1,57 @@
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-hamburger {
+    display: block;
+  }
+  /* Defensive: ensure closed nav cannot intercept clicks */
+  .nav-menu {
+    display: none !important;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    pointer-events: none !important;
+  }
+
+  .nav-menu.active {
+    display: flex !important;
+    pointer-events: auto !important;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .nav-menu li a:hover {
+    background: rgba(124, 58, 237, 0.1);
+  }
+}
+
+/* Global defensive overrides limited to mobile view so desktop nav remains visible */
+@media (max-width: 768px) {
+  .nav-menu, .navMenu, .nav-menu:not(.active), .navMenu:not(.active) {
+    display: none !important;
+    pointer-events: none !important;
+  }
+  .nav-menu.active, .navMenu.active {
+    display: flex !important;
+    pointer-events: auto !important;
+  }
+  .nav-overlay {
+    display: none !important;
+    pointer-events: none !important;
+  }
+}

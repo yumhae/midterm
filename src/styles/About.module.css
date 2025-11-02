@@ -1,0 +1,77 @@
+.about {
+  padding: 5.5rem 0;
+  background: #fff;
+}
+
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.aboutText {
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+.hobbies {
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+}
+
+.hobbies h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.hobbies ul {
+  padding-left: 1.25rem;
+  margin: 1rem 0;
+}
+
+.hobbies li {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.skillTag {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .aboutContent {
+    grid-template-columns: 1fr 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    padding: 4rem 0;
+  }
+}
